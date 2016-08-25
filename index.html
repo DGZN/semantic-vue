@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Semantic Vue</title>
+    <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.css">
+  </head>
+  <body>
+    <br>
+    <div class="ui container">
+      <sv-menu
+        menu-size=""
+        :icon="false"
+        :fluid="true"
+        :compact="false"
+        :borderless="false"
+        :labeled-icon="false"
+        :tabular="true"
+        :stackable="false"
+        :inverted="false"
+        :pointing="false"
+        :secondary="false"
+        :vertical="false"
+        :top-fixed="false"
+        :bottom-fixed="false"
+        :right-fixed="false"
+        :left-fixed="false"
+        :top-attached="false"
+        :bottom-attached="false"
+        :pagination="false"
+        :items="menuItems"
+      >
+      </sv-menu>
+
+      <br>
+
+      <sv-button
+      >
+    </sv-button>
+    </div>
+    <template id="menu-template">
+      <div class="ui text segment">
+          <h4 class="ui dividing blue header"> Basic Menu </h4>
+          <div class="ui {{ class }} menu">
+            <a
+            v-for="item in items"
+            class="{{ item.active ? 'active' : ''}} {{ item.isHeader ? 'header' : '' }} item"
+            >
+            {{ item.name }}
+          </a>
+        </div>
+      </div>
+    </template>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/semantic-ui/dist/semantic.js"></script>
+    <script src="components/menu.js"></script>
+    <script src="components/button.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
